@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Recipe catalog: search, filters and step-by-step instructions."
+    />
+    <title>Recipe Catalog</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="logo" href="index.html">Recipe Catalog</a>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <h1 id="hero-title">Find a recipe for every taste</h1>
+          <p class="hero__lead">
+            Hundreds of dishes with step-by-step instructions, cooking time and
+            calories.
+          </p>
+          <form
+            class="search-form"
+            id="hero-search"
+            action="catalog.html"
+            method="get"
+            role="search"
+          >
+            <label for="hero-q" class="visually-hidden">Search recipes</label>
+            <input
+              id="hero-q"
+              name="q"
+              type="search"
+              placeholder="For example: pizza"
+              autocomplete="off"
+            />
+            <button type="submit" class="btn btn--primary">Search</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="tags-title">
+        <div class="container">
+          <h2 id="tags-title">Popular tags</h2>
+          <ul class="chip-list" id="tag-list"></ul>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="featured-title">
+        <div class="container">
+          <h2 id="featured-title">Top rated</h2>
+          <div
+            id="featured-state"
+            class="state-region"
+            aria-live="polite"
+          ></div>
+          <ul class="card-grid" id="featured-list"></ul>
+          <p class="section__more">
+            <a class="btn" href="catalog.html">View full catalog</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          Data:
+          <a href="https://dummyjson.com/docs/recipes" rel="noopener"
+            >DummyJSON Recipes API</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/pages/home.ts"></script>
+  </body>
+</html>
